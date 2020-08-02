@@ -1,0 +1,53 @@
+Client:
+ Debug Mode: false
+
+Server:
+ Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 0
+ Server Version: 19.03.12
+ Storage Driver: overlay2
+  Backing Filesystem: xfs
+  Supports d_type: true
+  Native Overlay Diff: true
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+ Swarm: inactive
+ Runtimes: runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 894b81a4b802e4eb2a91d1ce216b8817763c29fb
+ runc version: 425e105d5a03fabd737a126ad93d62a9eeede87f
+ init version: fec3683
+ Security Options:
+  seccomp
+   Profile: default
+ Kernel Version: 4.18.0-193.14.2.el8_2.x86_64
+ Operating System: CentOS Linux 8 (Core)
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 8
+ Total Memory: 7.716GiB
+ Name: c8hard
+ ID: HDWI:6LHA:OIMN:N2UT:UNI7:WQ4S:LNKE:UMCZ:H3YQ:B26R:LTEI:RISS
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Registry: https://index.docker.io/v1/
+ Labels:
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+
+_______________________________________________________
+
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+d8ab2a398f56        hello-world         "/hello"            58 seconds ago      Exited (0) 57 seconds ago                       wonderful_rosalind
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              bf756fb1ae65        7 months ago        13.3kB

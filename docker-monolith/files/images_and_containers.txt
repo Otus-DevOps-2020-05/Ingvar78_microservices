@@ -1,0 +1,12 @@
+CONTAINER ID        IMAGE               CREATED AT                      NAMES
+968d6b395127        nginx:latest        2020-08-02 20:49:57 +0300 MSK   interesting_wing
+88b6208fa410        ubuntu:18.04        2020-08-02 20:49:22 +0300 MSK   unruffled_ishizaka
+4a57c6c5f5ca        ubuntu:18.04        2020-08-02 20:46:04 +0300 MSK   nifty_mahavira
+3a6659c85f56        ubuntu:18.04        2020-08-02 20:45:25 +0300 MSK   upbeat_brattain
+d8ab2a398f56        hello-world         2020-08-02 20:42:37 +0300 MSK   wonderful_rosalind
+
+REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE
+ingvar78/ubuntu-tmp-file   latest              91c655d924cf        3 minutes ago       64.2MB
+ubuntu                     18.04               2eb2d388e1a2        9 days ago          64.2MB
+nginx                      latest              8cf1bfb43ff5        11 days ago         132MB
+hello-world                latest              bf756fb1ae65        7 months ago        13.3kB
