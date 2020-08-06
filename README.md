@@ -7,6 +7,8 @@ Ingvar78 microservices repository
 [![Microservices Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/master?label=Microservices&style=plastic)](https://travis-ci.com/Otus-DevOps-2020-05/Ingvar78_microservices)
 [![Docker-2 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/docker-2?label=Docker-2&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/docker-2)
 
+[![Docker-3 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/docker-3?label=Docker-3&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/docker-3)
+
 
 
 
@@ -23,3 +25,11 @@ docker tag reddit:latest egerpro/otus-reddit:1.0
 docker push egerpro/otus-reddit:1.0
 docker run --name reddit -d -p 9292:9292 egerpro/otus-reddit:1.0
 ```
+
+<h1>18. Docker образы. Микросервисы </h1>
+
+<h2> 18.1 Научиться описывать и собирать Docker-образы для сервисного приложения </h2>
+<h2> 18.2 Научиться оптимизировать работу с Docker-образами </h2>
+<h2> 18.3 Запуск и работа приложения на основе Docker-образов, оценка удобства запуска контейнеров при помощи docker run </h2>
+
+этапы сборкаи и запуска приложения описаны в ./src/test.xt
