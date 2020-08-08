@@ -159,3 +159,34 @@ src_comment_1   puma                          Up                            #
 src_post_1      python3 post_app.py           Up                            #
 src_post_db_1   docker-entrypoint.sh mongod   Up      27017/tcp             #
 src_ui_1        puma                          Up      0.0.0.0:9292->9292/tcp#
+
+
+iva@c8hard src (docker-4 *) $ docker-compose up -d
+Starting reddit_ui_1      ... done
+Starting reddit_post_db_1 ... done
+Starting reddit_comment_1 ... done
+Starting reddit_post_1    ... done
+iva@c8hard src (docker-4 *) $ docker-compose ps
+      Name                   Command             State           Ports
+-------------------------------------------------------------------------------
+reddit_comment_1   puma                          Up
+reddit_post_1      python3 post_app.py           Up
+reddit_post_db_1   docker-entrypoint.sh mongod   Up      27017/tcp
+reddit_ui_1        puma                          Up      0.0.0.0:9292->9292/tcp
+
+
+iva@c8hard src (docker-4 *) $ docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+egerpro/ui                   2.0                 38629a3089b5        5 minutes ago       768MB
+egerpro/comment              2.0                 ca9094da82f5        5 minutes ago       110MB
+egerpro/post                 1.1                 8adfa8822d7e        6 minutes ago       449MB
+egerpro/ui                   1.0                 cbf95bf33704        About an hour ago   449MB
+egerpro/comment              1.0                 aaff8ff44322        About an hour ago   768MB
+egerpro/post                 1.0                 c1d80efcc7cc        About an hour ago   110MB
+nginx                        latest              08393e824c32        3 days ago          132MB
+mongo                        latest              aa22d67221a0        8 days ago          493MB
+ubuntu                       16.04               fab5e942c505        2 weeks ago         126MB
+mongo                        3.2                 fb885d89ea5c        21 months ago       300MB
+ruby                         2.2                 6c8e6f9667b2        2 years ago         715MB
+python                       3.6.0-alpine        cb178ebbf0f2        3 years ago         88.6MB
+joffotron/docker-net-tools   latest              b97158e38a06        3 years ago         10.6MB
