@@ -1,6 +1,6 @@
 docker-machine rm docker-host
 yc compute instance create   --name docker-host   --zone ru-central1-a   --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4   --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1804-lts,size=15   --ssh-key ~/.ssh/ubuntu.pub
-docker-machine create   --driver generic   --generic-ip-address=84.201.174.69   --generic-ssh-user yc-user   --generic-ssh-key ~/.ssh/ubuntu   docker-host
+docker-machine create   --driver generic   --generic-ip-address=130.193.50.86   --generic-ssh-user yc-user   --generic-ssh-key ~/.ssh/ubuntu   docker-host
 
 docker-machine ls
 eval $(docker-machine env docker-host)
@@ -41,3 +41,152 @@ docker run -d --network=reddit --network-alias=post_db --network-alias=comment_d
 docker run -d --network=reddit --network-alias=post egerpro/post:1.0
 docker run -d --network=reddit --network-alias=comment egerpro/comment:1.0
 docker run -d --network=reddit -p 9292:9292 egerpro/ui:2.0
+
+docker-4
+
+docker run -ti --rm --network none joffotron/docker-net-tools -c ifconfig
+
+docker run -ti --rm --network host joffotron/docker-net-tools -c ifconfig
+
+docker run --network host -d nginx
+
+docker kill $(docker ps -q)
+
+sudo ln -s /var/run/docker/netns /var/run/netns
+sudo ip netns
+
+#use dns-docker name space
+
+docker network create reddit --driver bridge
+docker run -d --network=reddit mongo:latest
+docker run -d --network=reddit egerpro/post:1.0
+docker run -d --network=reddit egerpro/comment:1.0
+docker run -d --network=reddit -p 9292:9292 egerpro/ui:1.0
+
+
+docker run -d --network=reddit --network-alias=post_db --network-alias=comment_db mongo:latest
+docker run -d --network=reddit --network-alias=post egerpro/post:1.0
+docker run -d --network=reddit --network-alias=comment egerpro/comment:1.0
+docker run -d --network=reddit -p 9292:9292 egerpro/ui:1.0
+
+
+docker kill $(docker ps -q)
+docker network create back_net --subnet=10.0.2.0/24
+docker network create front_net --subnet=10.0.1.0/24
+
+docker run -d --network=front_net -p 9292:9292 --name ui egerpro/ui:1.0
+docker run -d --network=back_net --name comment egerpro/comment:1.0
+docker run -d --network=back_net --name post egerpro/post:1.0
+docker run -d --network=back_net --name mongo_db --network-alias=post_db --network-alias=comment_db mongo:latest
+
+
+docker network connect front_net post
+docker network connect front_net comment
+
+
+yc-user@docker-host:~$ sudo docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+f24902a39ba4        back_net            bridge              local
+50f1e5041a10        bridge              bridge              local
+de412780f57d        front_net           bridge              local
+1366f6f96a02        host                host                local
+60920e0fa3e4        none                null                local
+a88020031eba        reddit              bridge              local
+yc-user@docker-host:~$ ifconfig | grep br
+br-a88020031eba: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.18.0.1  netmask 255.255.0.0  broadcast 172.18.255.255
+br-de412780f57d: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.1.1  netmask 255.255.255.0  broadcast 10.0.1.255
+br-f24902a39ba4: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.1  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        inet 10.130.0.17  netmask 255.255.255.0  broadcast 10.130.0.255
+yc-user@docker-host:~$ brctl show br-f24902a39ba4
+bridge name	bridge id		STP enabled	interfaces
+br-f24902a39ba4		8000.02429c6b6922	no		veth13c61ed
+							veth34d2cee
+							vetha331ac3
+yc-user@docker-host:~$ brctl show br-de412780f57d
+bridge name	bridge id		STP enabled	interfaces
+br-de412780f57d		8000.0242c18f0e29	no		veth5ab49b7
+							vethcdddbd6
+							vetheab8e8a
+yc-user@docker-host:~$ brctl show br-a88020031eba
+bridge name	bridge id		STP enabled	interfaces
+br-a88020031eba		8000.02428fad45cc	no
+yc-user@docker-host:~$ sudo iptables -nL -t nat
+Chain PREROUTING (policy ACCEPT)
+target     prot opt source               destination
+DOCKER     all  --  0.0.0.0/0            0.0.0.0/0            ADDRTYPE match dst-type LOCAL
+
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
+DOCKER     all  --  0.0.0.0/0           !127.0.0.0/8          ADDRTYPE match dst-type LOCAL
+
+Chain POSTROUTING (policy ACCEPT)
+target     prot opt source               destination
+MASQUERADE  all  --  10.0.1.0/24          0.0.0.0/0
+MASQUERADE  all  --  10.0.2.0/24          0.0.0.0/0
+MASQUERADE  all  --  172.18.0.0/16        0.0.0.0/0
+MASQUERADE  all  --  172.17.0.0/16        0.0.0.0/0
+MASQUERADE  tcp  --  10.0.1.2             10.0.1.2             tcp dpt:9292
+
+Chain DOCKER (2 references)
+target     prot opt source               destination
+RETURN     all  --  0.0.0.0/0            0.0.0.0/0
+RETURN     all  --  0.0.0.0/0            0.0.0.0/0
+RETURN     all  --  0.0.0.0/0            0.0.0.0/0
+RETURN     all  --  0.0.0.0/0            0.0.0.0/0
+DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:9292 to:10.0.1.2:9292
+
+yc-user@docker-host:~$ ps ax | grep docker-proxy
+14772 ?        Sl     0:00 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 9292 -container-ip 10.0.1.2 -container-port 9292
+19499 pts/0    R+     0:00 grep --color=auto docker-proxy
+
+touch docker-compose.yml
+docker kill $(docker ps -q)
+export USERNAME=egerpro
+docker-compose up -d
+docker-compose ps
+
+va@c8hard src (docker-4 *) $ docker-compose ps
+    Name                  Command             State           Ports         #
+----------------------------------------------------------------------------#
+src_comment_1   puma                          Up                            #
+src_post_1      python3 post_app.py           Up                            #
+src_post_db_1   docker-entrypoint.sh mongod   Up      27017/tcp             #
+src_ui_1        puma                          Up      0.0.0.0:9292->9292/tcp#
+
+
+iva@c8hard src (docker-4 *) $ docker-compose up -d
+Starting reddit_ui_1      ... done
+Starting reddit_post_db_1 ... done
+Starting reddit_comment_1 ... done
+Starting reddit_post_1    ... done
+iva@c8hard src (docker-4 *) $ docker-compose ps
+      Name                   Command             State           Ports
+-------------------------------------------------------------------------------
+reddit_comment_1   puma                          Up
+reddit_post_1      python3 post_app.py           Up
+reddit_post_db_1   docker-entrypoint.sh mongod   Up      27017/tcp
+reddit_ui_1        puma                          Up      0.0.0.0:9292->9292/tcp
+
+
+iva@c8hard src (docker-4 *) $ docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+egerpro/ui                   2.0                 38629a3089b5        5 minutes ago       768MB
+egerpro/comment              2.0                 ca9094da82f5        5 minutes ago       110MB
+egerpro/post                 1.1                 8adfa8822d7e        6 minutes ago       449MB
+egerpro/ui                   1.0                 cbf95bf33704        About an hour ago   449MB
+egerpro/comment              1.0                 aaff8ff44322        About an hour ago   768MB
+egerpro/post                 1.0                 c1d80efcc7cc        About an hour ago   110MB
+nginx                        latest              08393e824c32        3 days ago          132MB
+mongo                        latest              aa22d67221a0        8 days ago          493MB
+ubuntu                       16.04               fab5e942c505        2 weeks ago         126MB
+mongo                        3.2                 fb885d89ea5c        21 months ago       300MB
+ruby                         2.2                 6c8e6f9667b2        2 years ago         715MB
+python                       3.6.0-alpine        cb178ebbf0f2        3 years ago         88.6MB
+joffotron/docker-net-tools   latest              b97158e38a06        3 years ago         10.6MB
