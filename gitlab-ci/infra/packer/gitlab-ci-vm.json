@@ -1,0 +1,18 @@
+{
+    "builders": [
+        {
+            "type": "yandex",
+            "service_account_key_file": "{{user `yc_service_account_key_file`}}",
+            "folder_id": "{{user `yc_folder_id`}}",
+            "source_image_family": "{{user `yc_source_image_family`}}",
+            "image_name": "gitlab-ci-vm-{{timestamp}}",
+            "image_family": "gitlab-ci-vm",
+            "ssh_username": "ubuntu",
+            "platform_id": "standard-v1",
+            "use_ipv4_nat": true,
+            "instance_cores": 2,
+            "instance_mem_gb": 4,
+            "disk_size_gb": 50
+        }
+    ]
+}

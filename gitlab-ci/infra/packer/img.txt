@@ -1,0 +1,2 @@
+==> Builds finished. The artifacts of successful builds are:
+--> yandex: A disk image was created: gitlab-ci-vm-1599162799 (id: fd86jbdggpetnthn1ujm) with family name gitlab-ci-vm
