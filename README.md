@@ -56,3 +56,13 @@ docker run --name reddit -d -p 9292:9292 egerpro/otus-reddit:1.0
 * COMPOSE_PROJECT_NAME=xxx - название проекта (по умолчанию имя директории)
 
 <h2> 19.4 Работа с docker-compose.override.yml, дебаг приложения </h2>
+
+
+<h2> 21. Устройство Gitlab CI. Построение процесса непрерывной поставки </h2>
+
+• Подготовить инсталляцию Gitlab CI
+• Подготовить репозиторий с кодом приложения
+• Описать для приложения этапы пайплайна
+• Определить окружения
+
+[Slack for GitLabCI](https://app.slack.com/client/T014MRC4Y5A/D0140TNJCBZ)
