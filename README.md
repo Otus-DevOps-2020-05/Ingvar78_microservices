@@ -6,9 +6,12 @@ Ingvar78 microservices repository
 [![Microservices Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/master?label=Microservices&style=plastic)](https://travis-ci.com/Otus-DevOps-2020-05/Ingvar78_microservices)
 [![Docker-2 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/docker-2?label=Docker-2&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/docker-2)
 [![Docker-3 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/docker-3?label=Docker-3&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/docker-3)
-
 [![Docker-4 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/docker-4?label=Docker-4&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/docker-4)
 
+[![GitLab-CI-1 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/gitlab-ci-1?label=Gitlab-CI-1&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/gitlab-ci-1)
+[![Monitoring-1 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/monitoring-1?label=Monitoring-1&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/monitoring-1)
+
+[![Monitoring-2 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/monitoring-2?label=Monitoring-2&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/monitoring-2)
 
 <h1>17. Docker контейнеры. Docker под капотом </h1>
 
@@ -58,11 +61,20 @@ docker run --name reddit -d -p 9292:9292 egerpro/otus-reddit:1.0
 <h2> 19.4 Работа с docker-compose.override.yml, дебаг приложения </h2>
 
 
-<h2> 21. Устройство Gitlab CI. Построение процесса непрерывной поставки </h2>
+<h1> 21. Устройство Gitlab CI. Построение процесса непрерывной поставки </h1>
 
-• Подготовить инсталляцию Gitlab CI
-• Подготовить репозиторий с кодом приложения
-• Описать для приложения этапы пайплайна
-• Определить окружения
+    • Подготовить инсталляцию Gitlab CI
+    • Подготовить репозиторий с кодом приложения
+    • Описать для приложения этапы пайплайна
+    • Определить окружения
 
 [Slack for GitLabCI](https://app.slack.com/client/T014MRC4Y5A/D0140TNJCBZ)
+
+
+<h1> 23. Введение в мониторинг. Системы мониторинга. </h1>
+
+<h2> 23.1 Prometheus: запуск, конфигурация, знакомство с Web UI </h2>
+
+<h2> 23.2 Мониторинг состояния микросервисов </h2>
+
+<h2> 23.3 Сбор метрик хоста с использованием экспортера </h2>

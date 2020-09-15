@@ -5,7 +5,10 @@ services:
     volumes:
       - post_db:/data/db
     networks:
-      - back_net
+      back_net:
+        aliases:
+          - post_db
+          - comment_db
   ui:
     env_file: .env
     image: ${USER_NAME}/post:${VERSION_POST:-1.0}
@@ -51,6 +54,21 @@ services:
       - '--path.procfs=/host/proc'
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.ignored-mount-points="^/(sys|proc|dev|host|etc)($$|/)"'
+    networks:
+      - front_net
+      - back_net
+
+  blackbox-exporter:
+    image: cloudprober/cloudprober:v0.10.9
+    environment:
+      - CLOUDPROBER_HOST=0.0.0.0
+    volumes:
+      - ./cloudprober.cfg:/etc/cloudprober.cfg
+    ports:
+      - '9313:9313'
+    networks:
+      - back_net
+      - front_net
 
 volumes:
   post_db:

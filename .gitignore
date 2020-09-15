@@ -8,7 +8,7 @@ packer/variables.json
 jdauphant.nginx
 vault.key
 #docker-compose.yml
-#build_info.txt
+build_info.txt
 #prometheus/
 *.pyc
 .env
