@@ -11,7 +11,7 @@ services:
   ui:
     build: ./ui
 #    image: ${USERNAME}/ui:1.0
-    image: ${USERNAME}/post:${VERSION_POST:-1.0}
+    image: ${USER_NAME}/post:${VERSION_POST:-1.0}
     ports:
       - 9292:9292/tcp
     networks:
@@ -21,7 +21,7 @@ services:
   post:
     build: ./post-py
 #    image: ${USERNAME}/post:1.0
-    image: ${USERNAME}/comment:${VERSION_COMMENT:-1.0}
+    image: ${USER_NAME}/comment:${VERSION_COMMENT:-1.0}
     networks:
 #      - reddit
       - back_net
@@ -29,7 +29,7 @@ services:
   comment:
     build: ./comment
 #    image: ${USERNAME}/comment:1.0
-    image: ${USERNAME}/ui:${VERSION_UI:-2.0}
+    image: ${USER_NAME}/ui:${VERSION_UI:-2.0}
     networks:
 #      - reddit
       - front_net
