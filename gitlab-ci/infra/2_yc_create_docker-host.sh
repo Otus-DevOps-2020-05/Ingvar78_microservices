@@ -27,9 +27,6 @@ docker-machine create \
 --generic-ssh-key ~/.ssh/ubuntu \
 docker-host
 
-
-eval $(docker-machine env docker-host)
-
 else
     echo "Usage: $0 with ip"
   fi
