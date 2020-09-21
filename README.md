@@ -95,7 +95,32 @@ docker run --name reddit -d -p 9292:9292 egerpro/otus-reddit:1.0
 
  Много заданий со ⭐ (необязательных)
 
-<h2> Список образов на Dockerhub </h2>
+<h2> проделанная работа: </h2>
+
+    • Разделен docker-compose.yml разделён на две части: docker-compose.yml - приложение и docker-compose-monitoring.yml - мониторинг.
+    • Добавлен и запущен cAdvisor в сервисы докера и в настройки prometheus. Изучен его интерфейс и работа с ним.
+    • Добавлена и настроена на prometheus grafana.
+    • Скачан и импортирован в grafana дашборд "docker and system monitoring".(добавлен в каталог с дашбордами grafana DockerMonitoring.json)
+    • Создан дашборд UI_Service_Monitoring и Business_Logic_Monitoring. Добавлены графики по метрикам приложения:
+
+UI_Service_Monitoring:
+
+```
+- Rate of UI request count ("rate(ui_request_count[1m])")
+- Rate of UI requests count with error ("rate(ui_request_count{http_status=~\"^[45].*\"}[1m])")
+- HTTP responce time of 95% ("histogram_quantile(0.95, sum(rate(ui_request_response_time_bucket[5m])) by(le))")
+```
+Business_Logic_Monitoring:
+
+```
+- Posts Rate ("rate(post_count[1h])")
+- Comments Rate ("rate(comment_count[1h])")
+```
+
+    • файлы дашбордов экспортированы и сохранены в директории monitoring/grafana/dashboards
+    • Создан, настроен и запущен Alertmanager(создан конфиг с уведомлениями в slack, настроен prometheus(конфиг + добавлен alerts.yml))
+
+[Список образов на Dockerhub]( https://hub.docker.com/u/egerpro)
 
 <pre><font color="#4E9A06">REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE</font>
 <font color="#4E9A06">egerpro/prometheus        latest              852909dbba4d        58 minutes ago      112MB</font>
