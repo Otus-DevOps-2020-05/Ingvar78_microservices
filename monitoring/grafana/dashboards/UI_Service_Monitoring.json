@@ -292,8 +292,8 @@
     "list": []
   },
   "time": {
-    "from": "2020-09-21T20:01:25.015Z",
-    "to": "2020-09-21T20:31:25.015Z"
+    "from": "now-30m",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
