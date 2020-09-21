@@ -58,12 +58,21 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
     environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=secret
+      - GF_SECURITY_ADMIN_USER=${GF_ADM_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GF_ADM_PASSWORD}
     depends_on:
       - prometheus
     ports:
       - 3000:3000
+    networks:
+      - back_net
+
+  alertmanager:
+    image: ${USER_NAME}/alertmanager
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+    ports:
+      - 9093:9093
     networks:
       - back_net
 
