@@ -10,8 +10,11 @@ Ingvar78 microservices repository
 
 [![GitLab-CI-1 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/gitlab-ci-1?label=Gitlab-CI-1&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/gitlab-ci-1)
 [![Monitoring-1 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/monitoring-1?label=Monitoring-1&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/monitoring-1)
-
 [![Monitoring-2 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/monitoring-2?label=Monitoring-2&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/monitoring-2)
+
+[![Logging-1 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/logging-1?label=Logging-1&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/logging-1)
+
+[![Kubernetes-1 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-1?label=Kubernetes-1&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-1)
 
 <h1>17. Docker контейнеры. Docker под капотом </h1>
 
@@ -137,37 +140,11 @@ Business_Logic_Monitoring:
 <font color="#4E9A06">prom/node-exporter        v0.15.2             ff5ecdcfc4a2        2 years ago         22.8MB</font>
 </pre>
 
-<h1>26 </h1>
+<h1>26.Логирование и распределенная трассировка </h1>
 
-План
-Подготовка окружения
-Логирование Docker-контейнеров
-Сбор неструктурированных логов
-Визуализация логов
-Сбор структурированных логов
-Распределенный трейсинг
-
-<h2> 26.2.1. Подготовка окружения - скачивание новой ветки reddit</h2>
-<h2> 26.3.1. Создание compose-файла для системы логирования </h2>
-<h2> 26.3.2. Создание Dockerfile для Fluentd </h2>
-<h2> 26.3.3. Создание конфигурации Fluentd </h2>
-<h2> 26.3.4. Сборка образа Fluentd </h2>
-
-Cбор структурированных логов
-
-4.1. Запуск контейнеров из logging-enabled образов
-4.2. Просмотр логов контейнеров
-4.3. Настройка отправки логов во Fluentd для сервиса post
-
-5.1. Создание индекса в Kibana
-6.1. Добавление фильтра во Fluentd для сервиса post
-
-Сбор неструктурированных логов
-
-7.1. Настройка отправки логов во Fluentd для сервиса ui
-
-8.3.* Разбор ещё одного формата логов (по желанию)
-9.5. Просмотр трейсов в Zipkin
-порт 9411
-
-9.6.* Траблшутинг UI-экспириенса (по желанию)
+    • Подготовка окружения
+    • Логирование Docker-контейнеров
+    • Сбор неструктурированных логов
+    • Визуализация логов
+    • Сбор структурированных логов
+    • Распределенный трейсинг
