@@ -25,7 +25,7 @@ docker-machine create \
 --generic-ip-address=$1 \
 --generic-ssh-user yc-user \
 --generic-ssh-key ~/.ssh/ubuntu \
-docker-host
+logging
 
 else
     echo "Usage: $0 with ip"
