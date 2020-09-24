@@ -1,2 +1,2 @@
-ce45664
-monitoring-1
+f180531
+logging-1

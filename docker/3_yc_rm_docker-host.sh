@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker-machine rm docker-host
+docker-machine rm logging
 
-yc compute instance delete docker-host
+yc compute instance delete logging
