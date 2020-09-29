@@ -1,0 +1,180 @@
+- id: fhm3ron5090ggniic7rt
+  folder_id: b1gekrrielbmteicvonh
+  created_at: "2020-09-27T11:14:14Z"
+  name: master-0
+  zone_id: ru-central1-a
+  platform_id: standard-v2
+  resources:
+    memory: "4294967296"
+    cores: "2"
+    core_fraction: "100"
+  status: RUNNING
+  boot_disk:
+    mode: READ_WRITE
+    device_name: fhmj996ldq39i8i6brfm
+    auto_delete: true
+    disk_id: fhmj996ldq39i8i6brfm
+  network_interfaces:
+  - index: "0"
+    mac_address: d0:0d:3d:e2:e5:02
+    subnet_id: e9bh6mii4n0r807gn582
+    primary_v4_address:
+      address: 10.240.0.10
+      one_to_one_nat:
+        address: 178.154.224.213
+        ip_version: IPV4
+  fqdn: fhm3ron5090ggniic7rt.auto.internal
+  scheduling_policy: {}
+  network_settings:
+    type: STANDARD
+  placement_policy: {}
+- id: fhm44evqepktrc92rjd0
+  folder_id: b1gekrrielbmteicvonh
+  created_at: "2020-09-27T11:14:36Z"
+  name: worker-1
+  zone_id: ru-central1-a
+  platform_id: standard-v2
+  resources:
+    memory: "4294967296"
+    cores: "2"
+    core_fraction: "100"
+  status: RUNNING
+  boot_disk:
+    mode: READ_WRITE
+    device_name: fhmutotpq448o15450c3
+    auto_delete: true
+    disk_id: fhmutotpq448o15450c3
+  network_interfaces:
+  - index: "0"
+    mac_address: d0:0d:42:3b:fa:76
+    subnet_id: e9bh6mii4n0r807gn582
+    primary_v4_address:
+      address: 10.240.0.21
+      one_to_one_nat:
+        address: 178.154.226.228
+        ip_version: IPV4
+  fqdn: worker-1.ru-central1.internal
+  scheduling_policy: {}
+  network_settings:
+    type: STANDARD
+  placement_policy: {}
+- id: fhmdm6ui39g1v713jt2s
+  folder_id: b1gekrrielbmteicvonh
+  created_at: "2020-09-27T11:14:17Z"
+  name: master-2
+  zone_id: ru-central1-a
+  platform_id: standard-v2
+  resources:
+    memory: "4294967296"
+    cores: "2"
+    core_fraction: "100"
+  status: RUNNING
+  boot_disk:
+    mode: READ_WRITE
+    device_name: fhmj4m9d989m1af28rhg
+    auto_delete: true
+    disk_id: fhmj4m9d989m1af28rhg
+  network_interfaces:
+  - index: "0"
+    mac_address: d0:0d:db:1b:d2:1a
+    subnet_id: e9bh6mii4n0r807gn582
+    primary_v4_address:
+      address: 10.240.0.12
+      one_to_one_nat:
+        address: 178.154.226.172
+        ip_version: IPV4
+  fqdn: fhmdm6ui39g1v713jt2s.auto.internal
+  scheduling_policy: {}
+  network_settings:
+    type: STANDARD
+  placement_policy: {}
+- id: fhml8avsfj02a699smcu
+  folder_id: b1gekrrielbmteicvonh
+  created_at: "2020-09-27T11:14:34Z"
+  name: worker-0
+  zone_id: ru-central1-a
+  platform_id: standard-v2
+  resources:
+    memory: "4294967296"
+    cores: "2"
+    core_fraction: "100"
+  status: RUNNING
+  boot_disk:
+    mode: READ_WRITE
+    device_name: fhmnsv9n373ive4uodkd
+    auto_delete: true
+    disk_id: fhmnsv9n373ive4uodkd
+  network_interfaces:
+  - index: "0"
+    mac_address: d0:0d:15:42:bf:c7
+    subnet_id: e9bh6mii4n0r807gn582
+    primary_v4_address:
+      address: 10.240.0.20
+      one_to_one_nat:
+        address: 178.154.224.30
+        ip_version: IPV4
+  fqdn: worker-0.ru-central1.internal
+  scheduling_policy: {}
+  network_settings:
+    type: STANDARD
+  placement_policy: {}
+- id: fhmn6kfac0sr3ipb2tr2
+  folder_id: b1gekrrielbmteicvonh
+  created_at: "2020-09-27T11:14:16Z"
+  name: master-1
+  zone_id: ru-central1-a
+  platform_id: standard-v2
+  resources:
+    memory: "4294967296"
+    cores: "2"
+    core_fraction: "100"
+  status: RUNNING
+  boot_disk:
+    mode: READ_WRITE
+    device_name: fhm8bsnv3pfq27uarmv8
+    auto_delete: true
+    disk_id: fhm8bsnv3pfq27uarmv8
+  network_interfaces:
+  - index: "0"
+    mac_address: d0:0d:17:35:1e:a6
+    subnet_id: e9bh6mii4n0r807gn582
+    primary_v4_address:
+      address: 10.240.0.11
+      one_to_one_nat:
+        address: 178.154.226.88
+        ip_version: IPV4
+  fqdn: fhmn6kfac0sr3ipb2tr2.auto.internal
+  scheduling_policy: {}
+  network_settings:
+    type: STANDARD
+  placement_policy: {}
+- id: fhmufb48hgrea8d3c779
+  folder_id: b1gekrrielbmteicvonh
+  created_at: "2020-09-27T11:14:37Z"
+  name: worker-2
+  zone_id: ru-central1-a
+  platform_id: standard-v2
+  resources:
+    memory: "4294967296"
+    cores: "2"
+    core_fraction: "100"
+  status: RUNNING
+  boot_disk:
+    mode: READ_WRITE
+    device_name: fhm83qauigihtp39j2o3
+    auto_delete: true
+    disk_id: fhm83qauigihtp39j2o3
+  network_interfaces:
+  - index: "0"
+    mac_address: d0:0d:1e:7a:c8:88
+    subnet_id: e9bh6mii4n0r807gn582
+    primary_v4_address:
+      address: 10.240.0.22
+      one_to_one_nat:
+        address: 178.154.227.104
+        ip_version: IPV4
+  fqdn: worker-2.ru-central1.internal
+  scheduling_policy: {}
+  network_settings:
+    type: STANDARD
+  placement_policy: {}
