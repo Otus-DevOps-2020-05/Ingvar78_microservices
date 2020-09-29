@@ -16,6 +16,15 @@ Ingvar78 microservices repository
 
 [![Kubernetes-1 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-1?label=Kubernetes-1&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-1)
 
+[![Kubernetes-2 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-2?label=Kubernetes-2&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-2)
+
+[![Kubernetes-3 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-3?label=Kubernetes-3&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-3)
+
+[![Kubernetes-4 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-4?label=Kubernetes-4&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-4)
+
+[![Kubernetes-5 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-5?label=Kubernetes-5&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-5)
+
+
 <h1>17. Docker контейнеры. Docker под капотом </h1>
 
 <h2> 17.1 Установка и настройка docker, docker-compose, docker-machine, Изучение команд docker</h2>
@@ -140,7 +149,7 @@ Business_Logic_Monitoring:
 <font color="#4E9A06">prom/node-exporter        v0.15.2             ff5ecdcfc4a2        2 years ago         22.8MB</font>
 </pre>
 
-<h1>26.Логирование и распределенная трассировка </h1>
+<h1>26. Логирование и распределенная трассировка </h1>
 
     • Подготовка окружения
     • Логирование Docker-контейнеров
@@ -153,3 +162,11 @@ Business_Logic_Monitoring:
 
     • Разобрать на практике все компоненты Kubernetes, развернуть их вручную используя The Hard Way;
     • Ознакомиться с описанием основных примитивов нашего приложения и его дальнейшим запуском в Kubernetes.
+
+<h1>29. Основные модели безопасности и контроллеры в Kubernetes </h1>
+
+Kubernetes. Запуск кластера и приложения. Модель безопасности
+
+    • Развернуть локальное окружение для работы с Kubernetes
+    • Развернуть Kubernetes в Ya.cloud k8s
+    • Запустить reddit в Kubernetes
