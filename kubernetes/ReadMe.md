@@ -118,3 +118,30 @@ iva@c8hard kubernetes (kubernetes-2 *%) $ kubectl exec -ti ui-766677cb46-8cfxj n
 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
 OCI runtime exec failed: exec failed: container_linux.go:349: starting container process caused "exec: \"nslookup\": executable file not found in $PATH": unknown
 command terminated with exit code 126
+
+
+Crush
+
+minikube delete
+rm -rf ~/.minikube/
+docker images | grep minikube
+Found one image...
+docker rmi e3ca409c7daf
+
+
+iva@c8hard reddit (kubernetes-2 *%=) $ minikube service list
+|-------------|------------|--------------|-------------------------|
+|  NAMESPACE  |    NAME    | TARGET PORT  |           URL           |
+|-------------|------------|--------------|-------------------------|
+| default     | comment    | No node port |
+| default     | comment-db | No node port |
+| default     | kubernetes | No node port |
+| default     | mongodb    | No node port |
+| default     | post       | No node port |
+| default     | post-db    | No node port |
+| default     | ui         |         9292 | http://172.17.0.4:32092 |
+| kube-system | kube-dns   | No node port |
+|-------------|------------|--------------|-------------------------|
+
+
+minikube addons enable dashboard
