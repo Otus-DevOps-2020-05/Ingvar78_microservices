@@ -145,3 +145,27 @@ iva@c8hard reddit (kubernetes-2 *%=) $ minikube service list
 
 
 minikube addons enable dashboard
+
+
+iva@c8hard kubernetes (kubernetes-2=) $ kubectl apply -f ./reddit/dev-namespace.yml
+namespace/dev created
+iva@c8hard kubernetes (kubernetes-2=) $ kubectl apply -f ./reddit/ -n dev
+deployment.apps/comment created
+service/comment-db created
+service/comment created
+namespace/dev unchanged
+deployment.apps/mongo created
+service/mongodb created
+deployment.apps/post created
+service/post-db created
+service/post created
+deployment.apps/ui created
+service/ui created
+iva@c8hard kubernetes (kubernetes-2=) $ kubectl get nodes -o wide
+NAME                        STATUS   ROLES    AGE     VERSION   INTERNAL-IP   EXTERNAL-IP      OS-IMAGE             KERNEL-VERSION     CONTAINER-RUNTIME
+cl1et9j9ff17ecu8qls2-awap   Ready    <none>   9m41s   v1.17.8   10.130.0.35   84.201.132.87    Ubuntu 18.04.4 LTS   5.4.0-47-generic   docker://18.6.2
+cl1et9j9ff17ecu8qls2-ykan   Ready    <none>   10m     v1.17.8   10.130.0.26   130.193.50.183   Ubuntu 18.04.4 LTS   5.4.0-47-generic   docker://18.6.2
+iva@c8hard kubernetes (kubernetes-2=) $ kubectl describe service ui -n dev | grep NodePort
+Type:                     NodePort
+NodePort:                 <unset>  30750/TCP
+iva@c8hard kubernetes (kubernetes-2=) $
