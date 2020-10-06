@@ -170,3 +170,15 @@ Kubernetes. Запуск кластера и приложения. Модель 
     • Развернуть локальное окружение для работы с Kubernetes
     • Развернуть Kubernetes в Ya.cloud k8s
     • Запустить reddit в Kubernetes
+
+<h2>30. Kubernetes. Networks, Storages.</h2>
+
+План
+    • Ingress Controller
+    • Ingress
+    • Secret
+    • TLS
+    • LoadBalancer Service
+    • Network Policies
+    • PersistentVolumes
+    • PersistentVolumeClaims

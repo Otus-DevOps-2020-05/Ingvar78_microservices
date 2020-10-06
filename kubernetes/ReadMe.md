@@ -169,3 +169,53 @@ iva@c8hard kubernetes (kubernetes-2=) $ kubectl describe service ui -n dev | gre
 Type:                     NodePort
 NodePort:                 <unset>  30750/TCP
 iva@c8hard kubernetes (kubernetes-2=) $
+
+
+
+yc managed-kubernetes cluster get-credentials otus-cluster --external
+
+Динамическая подготовка тома
+https://cloud.yandex.ru/docs/managed-kubernetes/operations/volumes/dynamic-create-pv
+Статическая подготовка тома
+https://cloud.yandex.ru/docs/managed-kubernetes/operations/volumes/static-create-pv
+Управление классами хранилищ
+https://cloud.yandex.ru/docs/managed-kubernetes/operations/volumes/manage-storage-class
+
+
+https://cloud.yandex.com/docs/managed-kubernetes/operations/kubernetes-cluster/kubernetes-cluster-create
+
+yc managed-kubernetes cluster create \
+    --name test-k8s \
+    --network-name default \
+    --zone ru-central1-a \
+    --subnet-name default-ru-central1-a \
+    --public-ip \
+    --release-channel regular \
+    --version 1.17 \
+    --cluster-ipv4-range 10.1.0.0/16 \
+    --service-ipv4-range 10.2.0.0/16 \
+    --service-account-name k8-sa \
+    --node-service-account-name k8-sa \
+    --daily-maintenance-window start=22:00,duration=10h
+
+
+https://cloud.yandex.com/docs/managed-kubernetes/operations/node-group/node-group-create
+yc managed-kubernetes node-group create \
+ --name otus-node-group \
+ --cluster-name test-k8s \
+ --platform-id standard-v2 \
+ --location subnet-name=default-ru-central1-a,zone=ru-central1-a \
+ --public-ip \
+ --cores 2 \
+ --memory 4 \
+ --core-fraction 50 \
+ --disk-type network-ssd \
+ --disk-size 64 \
+ --fixed-size 2 \
+ --version 1.17 \
+ --daily-maintenance-window start=22:00,duration=10h
+
+
+
+$ yc managed-kubernetes node-group delete  --name otus-node-group
+$ yc managed-kubernetes cluster delete  --name test-k8s
