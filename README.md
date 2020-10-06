@@ -171,7 +171,9 @@ Kubernetes. Запуск кластера и приложения. Модель 
     • Развернуть Kubernetes в Ya.cloud k8s
     • Запустить reddit в Kubernetes
 
-<h2>30. Kubernetes. Networks, Storages.</h2>
+<h2>30.Ingress-контроллеры и сервисы в Kubernetes </h2>
+
+<h1>30.1 Kubernetes. Networks, Storages. </h1>
 
 План
     • Ingress Controller
