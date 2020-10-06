@@ -216,6 +216,28 @@ yc managed-kubernetes node-group create \
  --daily-maintenance-window start=22:00,duration=10h
 
 
+$ yc managed-kubernetes cluster get-credentials test-k8s --external
+$ kubectl apply -f ./kubernetes/reddit/dev-namespace.yml
+$ kubectl apply -f ./kubernetes/reddit/ -n dev
+
+$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "/CN=84.201.172.107"
+$ kubectl create secret tls ui-ingress --key tls.key --cert tls.crt -n dev
+
 
 $ yc managed-kubernetes node-group delete  --name otus-node-group
 $ yc managed-kubernetes cluster delete  --name test-k8s
+
+
+https://medium.com/@arturgspb/yandex-cloud-kubernates-with-ingress-loadbalancer-without-ssl-7d358f412daf
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.26.1/deploy/static/mandatory.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.26.1/deploy/static/provider/cloud-generic.yaml
+
+iva@c8hard reddit (kubernetes-3 *=) $ kubectl get pods --namespace=ingress-nginx
+NAME                                        READY   STATUS    RESTARTS   AGE
+nginx-ingress-controller-7fb85bc8bb-qz7cf   1/1     Running   0          62s
+
+va@c8hard reddit (kubernetes-3 *=) $
+iva@c8hard kubernetes (kubernetes-3 *=) $ kubectl get svc --namespace=ingress-nginx
+NAME            TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)                      AGE
+ingress-nginx   LoadBalancer   10.2.245.237   84.201.128.197   80:31433/TCP,443:30405/TCP   53s
