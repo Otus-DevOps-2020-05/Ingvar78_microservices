@@ -241,3 +241,6 @@ va@c8hard reddit (kubernetes-3 *=) $
 iva@c8hard kubernetes (kubernetes-3 *=) $ kubectl get svc --namespace=ingress-nginx
 NAME            TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)                      AGE
 ingress-nginx   LoadBalancer   10.2.245.237   84.201.128.197   80:31433/TCP,443:30405/TCP   53s
+
+helm plugin install https://github.com/rimusz/helm-tiller
+helm tiller run -- helm upgrade --install --wait --namespace=reddit-ns reddit reddit/

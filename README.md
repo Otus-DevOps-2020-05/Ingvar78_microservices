@@ -184,3 +184,12 @@ Kubernetes. Запуск кластера и приложения. Модель 
     • Network Policies
     • PersistentVolumes
     • PersistentVolumeClaims
+
+<h1>31. CI/CD в Kubernetes</h1>
+
+План
+    • Работа с Helm
+    • Развертывание Gitlab в Kubernetes
+    • Запуск CI/CD конвейера в Kubernetes
+
+<h2>31.1 Helm</h2>
