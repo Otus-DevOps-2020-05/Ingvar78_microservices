@@ -2,6 +2,6 @@ name: ui
 version: 1.0.0
 description: OTUS reddit application UI
 maintainers:
-- name: Someone
+- name: Igor Vishenkov
 email: igor@eger.pro
 appVersion: 1.0
