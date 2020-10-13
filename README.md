@@ -15,11 +15,8 @@ Ingvar78 microservices repository
 [![Logging-1 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/logging-1?label=Logging-1&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/logging-1)
 
 [![Kubernetes-1 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-1?label=Kubernetes-1&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-1)
-
 [![Kubernetes-2 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-2?label=Kubernetes-2&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-2)
-
 [![Kubernetes-3 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-3?label=Kubernetes-3&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-3)
-
 [![Kubernetes-4 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-4?label=Kubernetes-4&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-4)
 
 [![Kubernetes-5 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-5?label=Kubernetes-5&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-5)
@@ -195,3 +192,5 @@ Kubernetes. Запуск кластера и приложения. Модель 
 <h2>31.1 Helm</h2>
 
 <h2>31.2 GitLab + Kubernetes</h2>
+
+Дополнительно [Helm](https://helm.sh/docs/chart_template_guide/#the-chart-template-developer-s-guide)
