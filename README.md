@@ -193,3 +193,5 @@ Kubernetes. Запуск кластера и приложения. Модель 
     • Запуск CI/CD конвейера в Kubernetes
 
 <h2>31.1 Helm</h2>
+
+<h2>31.2 GitLab + Kubernetes</h2>
