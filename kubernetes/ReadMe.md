@@ -241,3 +241,63 @@ va@c8hard reddit (kubernetes-3 *=) $
 iva@c8hard kubernetes (kubernetes-3 *=) $ kubectl get svc --namespace=ingress-nginx
 NAME            TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)                      AGE
 ingress-nginx   LoadBalancer   10.2.245.237   84.201.128.197   80:31433/TCP,443:30405/TCP   53s
+
+helm plugin install https://github.com/rimusz/helm-tiller
+helm tiller run -- helm upgrade --install --wait --namespace=reddit-ns reddit reddit/
+
+
+________________________
+helm
+
+kubectl apply -f tiller.yml
+helm init --service-account tiller
+
+kubectl get pods -n kube-system --selector app=helm
+NAME                             READY   STATUS    RESTARTS   AGE
+tiller-deploy-71ecu8qasz-z7cf1   0/1     Pending   0          18s
+
+helm install --name test-ui-1 ui/
+helm install --name test-ui-2 ui/
+helm install --name test-ui-3 ui/
+
+helm upgrade test-ui-1 ui/
+helm upgrade test-ui-2 ui/
+helm upgrade test-ui-3 ui/
+
+# in 'Charts'
+helm install reddit --name reddit-test
+helm dep update ./reddit
+helm upgrade
+helm repo add gitlab https://charts.gitlab.io
+cd gitlab-omnibus
+helm install --name gitlab . -f values.yaml
+find nginx
+
+kubectl get service -n nginx-ingress nginx
+NAME    TYPE           CLUSTER-IP    EXTERNAL-IP    PORT(S)                                   AGE
+nginx   LoadBalancer   10.130.1.182   178.154.225.101   80:30182/TCP,443:31141/TCP,22:32253/TCP   43m
+modify /etc/hosts/
+
+echo "178.154.225.101 gitlab-gitlab staging production" >> /etc/hosts
+
+
+cd Gitlab_ci/ui
+git init
+git remote add origin http://gitlab-gitlab/iva/ui.git
+git add .
+git commit -m “init”
+git push origin master
+
+cd Gitlab_ci/post
+...
+git remote add origin http://gitlab-gitlab/iva/post.git
+...
+cd Gitlab_ci/comment
+...
+git remote add origin http://gitlab-gitlab/iva/comment.git
+...
+
+git commit -am "Add review feature"
+git push origin feature/3
+helm ls
+helm list

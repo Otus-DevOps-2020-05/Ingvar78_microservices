@@ -1,0 +1,7 @@
+name: comment
+version: 1.0.0
+description: OTUS reddit application COMMENT
+maintainers:
+  - name: Igor Vishenkov
+    email: igor@eger.pro
+appVersion: 1.0
