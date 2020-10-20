@@ -174,23 +174,37 @@ Kubernetes. Запуск кластера и приложения. Модель 
 
 План
     • Ingress Controller
+
     • Ingress
+
     • Secret
+
     • TLS
+
     • LoadBalancer Service
+
     • Network Policies
+
     • PersistentVolumes
+
     • PersistentVolumeClaims
 
 <h1>31. CI/CD в Kubernetes</h1>
 
 План
     • Работа с Helm
+
     • Развертывание Gitlab в Kubernetes
+
     • Запуск CI/CD конвейера в Kubernetes
+
 
 <h2>31.1 Helm</h2>
 
 <h2>31.2 GitLab + Kubernetes</h2>
 
 Дополнительно [Helm](https://helm.sh/docs/chart_template_guide/#the-chart-template-developer-s-guide)
+
+<h1>32 Kubernetes. Мониторинг и логирование</h1>
+
+<h2>32.1 Мониторинг</h2>
