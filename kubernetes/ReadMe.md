@@ -301,3 +301,28 @@ git commit -am "Add review feature"
 git push origin feature/3
 helm ls
 helm list
+
+
+#32
+
+yc managed-kubernetes cluster get-credentials test-k8s --external --force
+
+kubectl apply -f tiller.yml
+helm init --service-account tiller
+helm install stable/nginx-ingress --name nginx
+kubectl get svc
+
+
+<pre><font color="#4E9A06">iva@c8hard </font><font color="#CC0000">kubernetes (kubernetes-5 *) </font><font color="#729FCF"><b>$</b></font><font color="#4E9A06"> kubectl get svc</font>
+<font color="#4E9A06">NAME                                  TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)                      AGE</font>
+<font color="#4E9A06">kubernetes                            ClusterIP      10.2.128.1     &lt;none&gt;           443/TCP                      25m</font>
+<font color="#4E9A06">nginx-nginx-ingress-controller        LoadBalancer   10.2.132.253   84.201.133.235   80:31315/TCP,443:32624/TCP   2m27s</font>
+<font color="#4E9A06">nginx-nginx-ingress-default-backend   ClusterIP      10.2.184.194   &lt;none&gt;           80/TCP                       2m27s</font>
+</pre>
+
+
+echo "84.201.133.235 reddit reddit-prometheus reddit-grafana reddit-non-prod production reddit-kibana staging prod" >> /etc/hosts
+
+helm upgrade prom . -f custom_values.yml --install
+
+helm upgrade prom . -f custom_values.yml --install
