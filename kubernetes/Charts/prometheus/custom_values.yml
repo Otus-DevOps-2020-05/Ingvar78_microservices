@@ -873,8 +873,8 @@ serverFiles:
           - action: labelmap
             regex: __meta_kubernetes_service_label_(.+)
           - source_labels: [ __meta_kubernetes_service_label_app, __meta_kubernetes_namespace ]
-            action: keep
-            regex: reddit;(production|staging)+
+            action: keep # Для разных лейблов
+            regex: reddit;(production|staging)+ # разные регекспы
           - source_labels: [ __meta_kubernetes_namespace ]
             target_label: kubernetes_namespace
           - source_labels: [ __meta_kubernetes_service_name ]

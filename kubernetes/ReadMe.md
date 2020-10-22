@@ -325,4 +325,26 @@ echo "84.201.133.235 reddit reddit-prometheus reddit-grafana reddit-non-prod pro
 
 helm upgrade prom . -f custom_values.yml --install
 
-helm upgrade prom . -f custom_values.yml --install
+http://reddit-prometheus
+
+
+helm upgrade reddit-test ./reddit —install
+helm upgrade production --namespace production ./reddit --install
+helm upgrade staging --namespace staging ./reddit —install
+
+helm upgrade --install grafana stable/grafana --set "server.adminPassword=admin" --set "server.service.type=NodePort" --set "server.ingress.enabled=true" --set "server.ingress.hosts={reddit-grafana}"
+
+http://reddit-grafana
+user: admin
+pass: admin
+
+
+helm fetch —-untar stable/prometheus-operator
+
+helm install stable/prometheus-operator
+
+kubectl apply -f ./efk
+
+helm upgrade --install kibana stable/kibana --set "ingress.enabled=true" --set "ingress.hosts={reddit-kibana}" --set "env.ELASTICSEARCH_URL=http://elasticsearch-logging:9200" --version 0.1.1
+
+http://reddit-kibana/
