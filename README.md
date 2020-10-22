@@ -18,7 +18,6 @@ Ingvar78 microservices repository
 [![Kubernetes-2 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-2?label=Kubernetes-2&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-2)
 [![Kubernetes-3 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-3?label=Kubernetes-3&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-3)
 [![Kubernetes-4 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-4?label=Kubernetes-4&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-4)
-
 [![Kubernetes-5 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-5?label=Kubernetes-5&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-5)
 
 
