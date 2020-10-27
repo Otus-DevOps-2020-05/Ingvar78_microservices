@@ -18,7 +18,6 @@ Ingvar78 microservices repository
 [![Kubernetes-2 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-2?label=Kubernetes-2&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-2)
 [![Kubernetes-3 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-3?label=Kubernetes-3&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-3)
 [![Kubernetes-4 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-4?label=Kubernetes-4&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-4)
-
 [![Kubernetes-5 Status](https://img.shields.io/travis/Otus-DevOps-2020-05/Ingvar78_microservices/kubernetes-5?label=Kubernetes-5&style=plastic)](https://github.com/Otus-DevOps-2020-05/Ingvar78_microservices/tree/kubernetes-5)
 
 
@@ -174,23 +173,45 @@ Kubernetes. Запуск кластера и приложения. Модель 
 
 План
     • Ingress Controller
+
     • Ingress
+
     • Secret
+
     • TLS
+
     • LoadBalancer Service
+
     • Network Policies
+
     • PersistentVolumes
+
     • PersistentVolumeClaims
 
 <h1>31. CI/CD в Kubernetes</h1>
 
 План
     • Работа с Helm
+
     • Развертывание Gitlab в Kubernetes
+
     • Запуск CI/CD конвейера в Kubernetes
+
 
 <h2>31.1 Helm</h2>
 
 <h2>31.2 GitLab + Kubernetes</h2>
 
 Дополнительно [Helm](https://helm.sh/docs/chart_template_guide/#the-chart-template-developer-s-guide)
+
+<h1>32 Kubernetes. Мониторинг и логирование</h1>
+
+План
+
+    • Развертывание Prometheus в k8s
+
+    • Настройка Prometheus и Grafana для сбора метрик
+
+    • Настройка EFK для сбора логов
+
+<h2>32.1 Мониторинг</h2>
